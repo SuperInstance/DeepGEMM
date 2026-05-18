@@ -1,37 +1,11 @@
 # DeepGEMM
 
-DeepGEMM is a unified, high-performance tensor core kernel library that brings together the key computation primitives of modern large language models — GEMMs (FP8, FP4, BF16), fused MoE with overlapped communication (Mega MoE), MQA scoring for the lightning indexer, HyperConnection (HC), and more — into a single, cohesive CUDA codebase. All kernels are compiled at runtime via a lightweight Just-In-Time (JIT) module, requiring no CUDA compilation during installation.
+Fleet research: DeepSeek FP8 GEMM CUDA kernels — PTX tile marketplace candidate, FM→JC1 LoRA inference pipeline optimization.
 
-## Brand Line
-> High-performance GEMM kernels for GPU compute — DeepSeek's gift to the Cocapn fleet.
+## Overview
 
-## Installation
+DeepSeek FP8 General Matrix Multiply (GEMM) CUDA kernels for high-performance GPU inference. Designed as a candidate for the PTX tile marketplace and optimization of the Forgemaster-to-JetsonClaw1 LoRA inference pipeline.
 
-```bash
-git clone --recursive git@github.com:SuperInstance/DeepGEMM.git
-cd DeepGEMM
-./develop.sh
-./install.sh
-```
+## Part of the SuperInstance Fleet
 
-Then import `deep_gemm` in your Python project.
-
-## Usage
-
-```python
-import torch
-import deep_gemm
-
-# FP8 GEMM (NT layout)
-D = deep_gemm.fp8_gemm_nt(A, B, D, As, Bs)
-```
-
-## Fleet Context
-
-Part of the Cocapn fleet. DeepGEMM provides the GPU compute layer for fleet compute-intensive workloads.
-Related repos:
-- [JetsonClaw1-vessel](https://github.com/Lucineer/JetsonClaw1-vessel) — edge-native agent case study
-- [AIR](https://github.com/SuperInstance/AIR) — adaptive intelligence runtime
-- [Equipment-Swarm-Coordinator](https://github.com/SuperInstance/Equipment-Swarm-Coordinator) — multi-agent orchestration
-
-🦐 Cocapn fleet — lighthouse keeper architecture
+This repository is part of the SuperInstance fleet — a constellation of autonomous agents, vessels, and infrastructure maintained by the Cocapn platform.
